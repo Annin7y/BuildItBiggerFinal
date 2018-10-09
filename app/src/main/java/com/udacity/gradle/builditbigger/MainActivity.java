@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
     }
 
     @Override
@@ -42,8 +43,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void tellJoke(View view)
     {
+        JokesFetch myJokesFetch = new JokesFetch();
         //default code replaced with the code referencing JokesLibrary
        // Toast.makeText(this, "derp", Toast.LENGTH_SHORT).show();
-        Toast.makeText(this, new JokesFetch().getRandomJoke(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, myJokesFetch.getRandomJoke(), Toast.LENGTH_SHORT).show();
     }
 }
