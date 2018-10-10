@@ -54,8 +54,7 @@ public class MainActivity extends AppCompatActivity
 
         //default code replaced with the code referencing JokesLibrary
         // Toast.makeText(this, "derp", Toast.LENGTH_SHORT).show();
-        //Toast me
-        // .2ssage commented out after adding JokesActivity class
+        //Toast message commented out after adding JokesActivity class
         // Toast.makeText(this, myJokesFetch.getRandomJoke(), Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(this, JokesActivity.class);
         intent.setAction(Intent.ACTION_SEND);
