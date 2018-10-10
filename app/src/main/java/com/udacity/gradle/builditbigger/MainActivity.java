@@ -41,10 +41,9 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    // Intent intent = new Intent(this, JokesActivity.class);
    // Intent intent = new Intent(getContext(), JokesActivity.class);
    // intent.setAction(Intent.ACTION_SEND);
-     // intent.putExtra( MainActivity.JOKE_KEY, myJoke.getJoke());
+     // intent.putExtra( MainActivity.JOKE_KEY, myJokesFetch.getRandomJoke());
   //  startActivity(intent);
 
 
