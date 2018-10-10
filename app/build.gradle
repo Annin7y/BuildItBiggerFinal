@@ -36,6 +36,9 @@ android {
     allprojects {
         configurations.all {
             resolutionStrategy.force "com.android.support:support-v7:28.0.0"
+            resolutionStrategy.force "com.android.support:customtabs:28.0.0"
+            resolutionStrategy.force "com.android.support:support-annotations:28.0.0"
+            resolutionStrategy.force "com.android.support:support-compat:28.0.0"
         }
     }
 }
@@ -48,6 +51,9 @@ dependencies {
     implementation 'com.google.api-client:google-api-client:1.23.0'
     implementation 'com.google.http-client:google-http-client-android:1.23.0'
     implementation 'com.google.code.findbugs:jsr305:3.0.1'
+    implementation ('com.google.android.gms:play-services-ads:17.0.0') {
+        exclude group: 'com.android.support', module: 'support-v4'
+    }
     implementation  project(':jokesdepository')
     implementation  project(':jokeslibrary')
 
