@@ -52,10 +52,13 @@ public class MainActivity extends AppCompatActivity
     {
         JokesFetch myJokesFetch = new JokesFetch();
 
-        //default code replaced with the code referencing JokesLibrary
+        // default code below replaced with the code referencing JokesLibrary
         // Toast.makeText(this, "derp", Toast.LENGTH_SHORT).show();
-        //Toast message commented out after adding JokesActivity class
+        // Message commented out after adding JokesActivity class
         // Toast.makeText(this, myJokesFetch.getRandomJoke(), Toast.LENGTH_SHORT).show();
+
+        // Code structure below is based on the answer given on this site:
+        // https://www.c-sharpcorner.com/article/how-to-send-the-data-one-activity-to-another-activity-in-android-application/
         Intent intent = new Intent(this, JokesActivity.class);
         intent.setAction(Intent.ACTION_SEND);
         intent.putExtra(JOKE_STRING, myJokesFetch.getRandomJoke());

@@ -17,8 +17,8 @@ public class JokesFetch
 
     public String getRandomJoke()
     {
-        //Code structure below is based on the answer given in this thread:
-        //https://stackoverflow.com/questions/13340516/random-element-from-string-array/13340579
+        // Code structure below is based on the answer given in this thread:
+        // https://stackoverflow.com/questions/13340516/random-element-from-string-array/13340579
         String joke = jokesList[new Random().nextInt(jokesList.length)];
         return joke;
     }
