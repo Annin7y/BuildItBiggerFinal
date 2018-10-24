@@ -2,7 +2,8 @@ package builditbigger.android.my.annin.jokesdepository;
 
 import java.util.Random;
 
-public class JokesFetch
+public class
+JokesFetch
 {
     /*
    Jokes copied and pasted from https://top-funny-jokes.com/
