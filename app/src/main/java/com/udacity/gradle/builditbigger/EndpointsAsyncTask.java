@@ -1,14 +1,31 @@
 package com.udacity.gradle.builditbigger;
 
+import android.content.Context;
 import android.os.AsyncTask;
+import android.util.Pair;
+import android.widget.Toast;
 
-public class EndpointsAsyncTask extends AsyncTask<String, Void, String>
-{
+import com.google.api.client.extensions.android.http.AndroidHttp;
+import com.google.api.client.extensions.android.json.AndroidJsonFactory;
+import com.google.api.client.googleapis.services.AbstractGoogleClientRequest;
+import com.google.api.client.googleapis.services.GoogleClientRequestInitializer;
+import com.udacity.gradle.builditbigger.backend.myApi.MyApi;
+
+import java.io.IOException;
+
+public class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, String> {
+
+    //Code imported from: https://github.com/GoogleCloudPlatform/gradle-appengine-templates/tree/deprecation/HelloEndpoints
+    //Some original code commented out
+
     private static MyApi myApiService = null;
+    private Context context;
 
+    private static final String TAG = EndpointsAsyncTaskInterface.class.getSimpleName();
+    private EndpointsAsyncTaskInterface listener;
 
     @Override
-    protected String doInBackground(String... params) {
+    protected String doInBackground(Pair<Context, String>... params) {
         if(myApiService == null) {  // Only do this once
             MyApi.Builder builder = new MyApi.Builder(AndroidHttp.newCompatibleTransport(),
                     new AndroidJsonFactory(), null)
@@ -39,9 +56,9 @@ public class EndpointsAsyncTask extends AsyncTask<String, Void, String>
 
     @Override
     protected void onPostExecute(String result) {
-        Toast.makeText(context, result, Toast.LENGTH_LONG).show();
+        super.onPostExecute(result);
+      //  Toast.makeText(context, result, Toast.LENGTH_LONG).show();
     }
 }
 
 
-}
