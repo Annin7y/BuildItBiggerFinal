@@ -16,13 +16,15 @@ import javax.inject.Named;
                 packagePath = ""
         )
 )
-public class MyEndpoint {
+public class MyEndpoint
+{
 
     /**
      * A simple endpoint method that takes a name and says Hi back
      */
     @ApiMethod(name = "sayHi")
-    public MyBean sayHi(@Named("name") String name) {
+    public MyBean sayHi(@Named("name") String name)
+    {
         MyBean response = new MyBean();
         response.setData("Hi, " + name);
 
@@ -30,13 +32,15 @@ public class MyEndpoint {
     }
 
     /**
-     * An endpoint method that returns a joke; modeled after the sayHi method above
+     * An endpoint method that returns a joke; modeled after the sayHi method above and public void tellJoke(View view)
+     * in app MainActivity
      */
     @ApiMethod(name = "getJokeFromRepository")
-    public MyBean getJoke(@Named("joke")String joke) {
+    public MyBean getJokeFromRepository()
+    {
         MyBean response = new MyBean();
         JokesFetch myJokesFetch = new JokesFetch();
-        response.setData(joke.getRandomJoke());
+        response.setData(myJokesFetch.getRandomJoke());
         return response;
     }
 }

@@ -13,7 +13,7 @@ import com.udacity.gradle.builditbigger.backend.myApi.MyApi;
 
 import java.io.IOException;
 
-public class EndpointsAsyncTask extends AsyncTask<Context,  Void, String> {
+public class EndpointsAsyncTask extends AsyncTask<Context, Void, String> {
 
     //Code imported from: https://github.com/GoogleCloudPlatform/gradle-appengine-templates/tree/deprecation/HelloEndpoints
     //Some original code commented out
@@ -48,10 +48,10 @@ public class EndpointsAsyncTask extends AsyncTask<Context,  Void, String> {
         context = params[0];
 
         // String params get method commented out since only one parameter("context") is used
-         String name = params[0].second;
+        // String name = params[0].second;
 
         try {
-            return myApiService.getJokeFromRepository(joke).execute().getData();
+            return myApiService.getJokeFromRepository().execute().getData();
         } catch (IOException e) {
             return e.getMessage();
         }
@@ -61,6 +61,7 @@ public class EndpointsAsyncTask extends AsyncTask<Context,  Void, String> {
     protected void onPostExecute(String result) {
         super.onPostExecute(result);
       //  Toast.makeText(context, result, Toast.LENGTH_LONG).show();
+        listener.returnJokeData(result);
     }
 }
 
