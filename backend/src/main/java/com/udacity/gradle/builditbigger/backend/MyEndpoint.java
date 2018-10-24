@@ -3,7 +3,7 @@ package com.udacity.gradle.builditbigger.backend;
 import com.google.api.server.spi.config.Api;
 import com.google.api.server.spi.config.ApiMethod;
 import com.google.api.server.spi.config.ApiNamespace;
-
+import builditbigger.android.my.annin.jokesdepository.JokesFetch;
 import javax.inject.Named;
 
 /** An endpoint class we are exposing */
@@ -33,11 +33,10 @@ public class MyEndpoint {
      * An endpoint method that returns a joke; modeled after the sayHi method above
      */
     @ApiMethod(name = "getJokeFromRepository")
-    public MyBean getJoke() {
-
+    public MyBean getJoke(@Named("joke")String joke) {
         MyBean response = new MyBean();
         JokesFetch myJokesFetch = new JokesFetch();
-        response.setData(new JokesFetch().get)
+        response.setData(joke.getRandomJoke());
         return response;
     }
 }
