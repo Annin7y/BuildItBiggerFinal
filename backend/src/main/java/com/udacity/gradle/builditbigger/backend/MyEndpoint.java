@@ -37,7 +37,7 @@ public class MyEndpoint {
 
         MyBean response = new MyBean();
         JokesFetch myJokesFetch = new JokesFetch();
-        response.setData
+        response.setData(new JokesFetch().get)
         return response;
     }
 }
