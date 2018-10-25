@@ -59,14 +59,15 @@ public class MainActivity extends AppCompatActivity implements EndpointsAsyncTas
 
         // Code structure below is based on the answer given on this site:
         // https://www.c-sharpcorner.com/article/how-to-send-the-data-one-activity-to-another-activity-in-android-application/
-        Intent intent = new Intent(this, JokesActivity.class);
-        intent.setAction(Intent.ACTION_SEND);
-        intent.putExtra(JOKE_STRING, myJokesFetch.getRandomJoke());
-        startActivity(intent);
+        // Code commented out after implementing GCE
+//        Intent intent = new Intent(this, JokesActivity.class);
+//        intent.setAction(Intent.ACTION_SEND);
+//        intent.putExtra(JOKE_STRING, myJokesFetch.getRandomJoke());
+//        startActivity(intent);
     }
 
     @Override
-    public returnJokeData(result) {
+    public void returnJokeData(String result) {
 
     }
 }

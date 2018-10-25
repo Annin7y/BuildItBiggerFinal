@@ -2,6 +2,6 @@ package com.udacity.gradle.builditbigger;
 
 public interface EndpointsAsyncTaskInterface {
 
-    void returnJokeData(result);
+    void returnJokeData(String result);
 
 }
