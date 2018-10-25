@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity implements EndpointsAsyncTas
     }
 
     @Override
-    public void returnJokeData() {
-        
+    public returnJokeData(result) {
+
     }
 }
