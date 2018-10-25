@@ -12,7 +12,7 @@ import builditbigger.android.my.annin.jokesdepository.JokesFetch;
 import builditbigger.android.my.annin.jokeslibrary.JokesActivity;
 
 
-public class MainActivity extends AppCompatActivity
+public class MainActivity extends AppCompatActivity implements EndpointsAsyncTaskInterface
 {
     public static final String JOKE_STRING = "Joke string";
 
@@ -63,5 +63,10 @@ public class MainActivity extends AppCompatActivity
         intent.setAction(Intent.ACTION_SEND);
         intent.putExtra(JOKE_STRING, myJokesFetch.getRandomJoke());
         startActivity(intent);
+    }
+
+    @Override
+    public void returnJokeData() {
+        
     }
 }
