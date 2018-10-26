@@ -26,8 +26,6 @@ public class MainActivity extends AppCompatActivity implements EndpointsAsyncTas
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-       // EndpointsAsyncTask myTask = new EndpointsAsyncTask(this);
-       // myTask.execute();
     }
 
     @Override
@@ -74,6 +72,7 @@ public class MainActivity extends AppCompatActivity implements EndpointsAsyncTas
 
         EndpointsAsyncTask myTask = new EndpointsAsyncTask(this);
         myTask.execute();
+
     }
 
     @Override

@@ -25,9 +25,10 @@ public class EndpointsAsyncTask extends AsyncTask<String, Void, String>
     private static final String TAG = EndpointsAsyncTaskInterface.class.getSimpleName();
     private EndpointsAsyncTaskInterface listener;
 
-    public EndpointsAsyncTask(EndpointsAsyncTaskInterface listener)
+    @Override
+    protected void onPreExecute()
     {
-        this.listener = listener;
+        super.onPreExecute();
     }
 
     @Override
@@ -73,7 +74,9 @@ public class EndpointsAsyncTask extends AsyncTask<String, Void, String>
     {
         super.onPostExecute(result);
       //  Toast.makeText(context, result, Toast.LENGTH_LONG).show();
-        listener.returnJokeData(result);
+        if (result != null) {
+            listener.returnJokeData(result);
+        }
     }
 }
 
