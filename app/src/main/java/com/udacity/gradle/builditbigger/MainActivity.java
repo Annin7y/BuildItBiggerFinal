@@ -1,11 +1,13 @@
 package com.udacity.gradle.builditbigger;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import builditbigger.android.my.annin.jokesdepository.JokesFetch;
@@ -16,11 +18,16 @@ public class MainActivity extends AppCompatActivity implements EndpointsAsyncTas
 {
     public static final String JOKE_STRING = "Joke string";
 
+   // Button jokeButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+       // EndpointsAsyncTask myTask = new EndpointsAsyncTask(this);
+       // myTask.execute();
     }
 
     @Override
@@ -50,7 +57,7 @@ public class MainActivity extends AppCompatActivity implements EndpointsAsyncTas
 
     public void tellJoke(View view)
     {
-        JokesFetch myJokesFetch = new JokesFetch();
+       // JokesFetch myJokesFetch = new JokesFetch();
 
         // default code below replaced with the code referencing JokesLibrary
         // Toast.makeText(this, "derp", Toast.LENGTH_SHORT).show();
@@ -64,10 +71,19 @@ public class MainActivity extends AppCompatActivity implements EndpointsAsyncTas
 //        intent.setAction(Intent.ACTION_SEND);
 //        intent.putExtra(JOKE_STRING, myJokesFetch.getRandomJoke());
 //        startActivity(intent);
+
+        EndpointsAsyncTask myTask = new EndpointsAsyncTask(this);
+        myTask.execute();
     }
 
     @Override
-    public void returnJokeData(String result) {
+    public void returnJokeData(String result)
+    {
+        Intent intent = new Intent(this, JokesActivity.class);
+        intent.setAction(Intent.ACTION_SEND);
+        intent.putExtra( MainActivity.JOKE_STRING, result);
+        startActivity(intent);
+    }
 
     }
-}
+

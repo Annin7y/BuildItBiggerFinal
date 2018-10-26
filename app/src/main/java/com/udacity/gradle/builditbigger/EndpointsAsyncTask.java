@@ -13,14 +13,14 @@ import com.udacity.gradle.builditbigger.backend.myApi.MyApi;
 
 import java.io.IOException;
 
-public class EndpointsAsyncTask extends AsyncTask<Context, Void, String>
+public class EndpointsAsyncTask extends AsyncTask<String, Void, String>
 {
 
     //Code imported from: https://github.com/GoogleCloudPlatform/gradle-appengine-templates/tree/deprecation/HelloEndpoints
     //Some original code commented out
 
     private static MyApi myApiService = null;
-    private Context context;
+   // private Context context;
 
     private static final String TAG = EndpointsAsyncTaskInterface.class.getSimpleName();
     private EndpointsAsyncTaskInterface listener;
@@ -31,7 +31,7 @@ public class EndpointsAsyncTask extends AsyncTask<Context, Void, String>
     }
 
     @Override
-    protected String doInBackground(Context ... params)
+    protected String doInBackground(String ... params)
     {
         if(myApiService == null)
         {  // Only do this once
@@ -55,7 +55,7 @@ public class EndpointsAsyncTask extends AsyncTask<Context, Void, String>
         }
 
 
-        context = params[0];
+       // context = params[0];
 
         // String params get method commented out since only one parameter("context") is used
         // String name = params[0].second;
