@@ -12,8 +12,9 @@ import com.google.api.client.googleapis.services.GoogleClientRequestInitializer;
 import com.udacity.gradle.builditbigger.backend.myApi.MyApi;
 
 import java.io.IOException;
+import java.net.URL;
 
-public class EndpointsAsyncTask extends AsyncTask<String, Void, String>
+public class EndpointsAsyncTask extends AsyncTask<Void, Void, String>
 {
 
     //Code imported from: https://github.com/GoogleCloudPlatform/gradle-appengine-templates/tree/deprecation/HelloEndpoints
@@ -25,14 +26,19 @@ public class EndpointsAsyncTask extends AsyncTask<String, Void, String>
     private static final String TAG = EndpointsAsyncTaskInterface.class.getSimpleName();
     private EndpointsAsyncTaskInterface listener;
 
-    @Override
+    public EndpointsAsyncTask(EndpointsAsyncTaskInterface listener)
+    {
+        this.listener = listener;
+    }
+
+        @Override
     protected void onPreExecute()
     {
         super.onPreExecute();
     }
 
     @Override
-    protected String doInBackground(String ... params)
+    protected String doInBackground(Void ... params)
     {
         if(myApiService == null)
         {  // Only do this once
@@ -57,9 +63,8 @@ public class EndpointsAsyncTask extends AsyncTask<String, Void, String>
 
 
        // context = params[0];
+       // String name = params[0].second;
 
-        // String params get method commented out since only one parameter("context") is used
-        // String name = params[0].second;
 
         try
         {
@@ -72,11 +77,12 @@ public class EndpointsAsyncTask extends AsyncTask<String, Void, String>
     @Override
     protected void onPostExecute(String result)
     {
+       // Toast.makeText(context,result, Toast.LENGTH_LONG).show();
         super.onPostExecute(result);
-      //  Toast.makeText(context, result, Toast.LENGTH_LONG).show();
-        if (result != null) {
+
+       // if (result != null) {
             listener.returnJokeData(result);
-        }
+       // }
     }
 }
 
