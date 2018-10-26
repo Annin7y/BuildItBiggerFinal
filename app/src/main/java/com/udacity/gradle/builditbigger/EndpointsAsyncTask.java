@@ -80,9 +80,10 @@ public class EndpointsAsyncTask extends AsyncTask<Void, Void, String>
        // Toast.makeText(context,result, Toast.LENGTH_LONG).show();
         super.onPostExecute(result);
 
-       // if (result != null) {
+        if (result != null)
+        {
             listener.returnJokeData(result);
-       // }
+        }
     }
 }
 
