@@ -10,13 +10,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import builditbigger.android.my.annin.jokesdepository.JokesFetch;
 import builditbigger.android.my.annin.jokeslibrary.JokesActivity;
 
 
 public class MainActivity extends AppCompatActivity implements EndpointsAsyncTaskInterface
 {
-    public static final String JOKE_STRING = "Joke string";
+    public static final String JOKE_STRING = "joke_string";
 
    // Button jokeButton;
 
@@ -25,10 +24,6 @@ public class MainActivity extends AppCompatActivity implements EndpointsAsyncTas
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        EndpointsAsyncTask myTask = new EndpointsAsyncTask(this);
-        myTask.execute();
-
 
     }
 
@@ -73,6 +68,9 @@ public class MainActivity extends AppCompatActivity implements EndpointsAsyncTas
 //        intent.setAction(Intent.ACTION_SEND);
 //        intent.putExtra(JOKE_STRING, myJokesFetch.getRandomJoke());
 //        startActivity(intent);
+
+        EndpointsAsyncTask myTask = new EndpointsAsyncTask(this);
+        myTask.execute();
 
     }
 

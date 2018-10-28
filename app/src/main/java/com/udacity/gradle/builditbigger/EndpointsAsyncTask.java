@@ -16,7 +16,6 @@ import java.net.URL;
 
 public class EndpointsAsyncTask extends AsyncTask<Void, Void, String>
 {
-
     //Code imported from: https://github.com/GoogleCloudPlatform/gradle-appengine-templates/tree/deprecation/HelloEndpoints
     //Some original code commented out
 
@@ -61,15 +60,15 @@ public class EndpointsAsyncTask extends AsyncTask<Void, Void, String>
             myApiService = builder.build();
         }
 
-
        // context = params[0];
        // String name = params[0].second;
-
-
+        
         try
         {
             return myApiService.getJokeFromRepository().execute().getData();
-        } catch (IOException e) {
+        }
+        catch (IOException e)
+        {
             return e.getMessage();
         }
     }
