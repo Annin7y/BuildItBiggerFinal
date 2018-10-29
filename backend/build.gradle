@@ -40,7 +40,7 @@ dependencies {
 
 appengine {
     run {
-        host = "0.0.0.0"
+        host = "http://192.168.0.13"
         port = 8080
     }
 }
