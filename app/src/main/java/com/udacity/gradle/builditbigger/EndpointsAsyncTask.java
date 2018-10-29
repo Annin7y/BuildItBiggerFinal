@@ -62,7 +62,7 @@ public class EndpointsAsyncTask extends AsyncTask<Void, Void, String>
 
        // context = params[0];
        // String name = params[0].second;
-        
+
         try
         {
             return myApiService.getJokeFromRepository().execute().getData();

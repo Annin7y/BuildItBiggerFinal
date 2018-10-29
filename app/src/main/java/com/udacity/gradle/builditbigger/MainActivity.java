@@ -13,48 +13,42 @@ import android.widget.Toast;
 import builditbigger.android.my.annin.jokeslibrary.JokesActivity;
 
 
-public class MainActivity extends AppCompatActivity implements EndpointsAsyncTaskInterface
-{
+public class MainActivity extends AppCompatActivity implements EndpointsAsyncTaskInterface {
     public static final String JOKE_STRING = "joke_string";
 
-   // Button jokeButton;
+    // Button jokeButton;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu)
-    {
+    public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item)
-    {
+    public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings)
-        {
+        if (id == R.id.action_settings) {
             return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
 
-    public void tellJoke(View view)
-    {
-       // JokesFetch myJokesFetch = new JokesFetch();
+    public void tellJoke(View view) {
+        // JokesFetch myJokesFetch = new JokesFetch();
 
         // default code below replaced with the code referencing JokesLibrary
         // Toast.makeText(this, "derp", Toast.LENGTH_SHORT).show();
@@ -69,19 +63,19 @@ public class MainActivity extends AppCompatActivity implements EndpointsAsyncTas
 //        intent.putExtra(JOKE_STRING, myJokesFetch.getRandomJoke());
 //        startActivity(intent);
 
+
         EndpointsAsyncTask myTask = new EndpointsAsyncTask(this);
         myTask.execute();
 
     }
 
     @Override
-    public void returnJokeData(String result)
-    {
+    public void returnJokeData(String result) {
         Intent intent = new Intent(this, JokesActivity.class);
         intent.setAction(Intent.ACTION_SEND);
-        intent.putExtra( MainActivity.JOKE_STRING, result);
+        intent.putExtra(MainActivity.JOKE_STRING, result);
         startActivity(intent);
     }
 
-    }
+}
 
