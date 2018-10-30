@@ -25,6 +25,11 @@ targetCompatibility = JavaVersion.VERSION_1_7
 
 appengine {
         tools.cloudSdkHome = 'C:\\Program Files (x86)\\Google\\CLOUD SDK\\google-cloud-sdk'
+
+        run {
+            host = "0.0.0.0"
+            port = 8080
+        }
     }
 
 dependencies {
@@ -38,9 +43,3 @@ dependencies {
     implementation  project(':jokesdepository')
 }
 
-appengine {
-    run {
-        host = "http://192.168.0.13"
-        port = 8600
-    }
-}
