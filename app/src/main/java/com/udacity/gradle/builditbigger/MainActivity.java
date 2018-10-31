@@ -16,8 +16,6 @@ import builditbigger.android.my.annin.jokeslibrary.JokesActivity;
 public class MainActivity extends AppCompatActivity implements EndpointsAsyncTaskInterface {
     public static final String JOKE_STRING = "joke_string";
 
-    Button jokeButton;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
