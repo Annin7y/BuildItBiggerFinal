@@ -16,26 +16,7 @@ import static junit.framework.TestCase.assertTrue;
 
 public class EmptyStringTest {
 
-//    Context context;
-//
-//    @Test
-//    public void testVerifyJoke() throws InterruptedException {
-//        assertTrue(true);
-//        final CountDownLatch latch = new CountDownLatch(1);
-//        context = InstrumentationRegistry.getContext();
-//        EndpointsAsyncTask testTask = new EndpointsAsyncTask(EndpointsAsyncTaskInterface) {
-//            @Override
-//            protected void onPostExecute(String result) {
-//                assertNotNull(result);
-//                if (result != null){
-//                    assertTrue(result.length() > 0);
-//                    latch.countDown();
-//                }
-//            }
-//        };
-//        testTask.execute(context);
-//        latch.await();
-//    }
-//
+
+
 
 }
