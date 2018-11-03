@@ -26,13 +26,7 @@ targetCompatibility = JavaVersion.VERSION_1_7
 appengine {
         tools.cloudSdkHome = 'C:\\Program Files (x86)\\Google\\CLOUD SDK\\google-cloud-sdk'
 
-    run {
-        host = "10.0.2.2"
-        port = 8080
-    }
-
 }
-
 
 dependencies {
 
