@@ -17,6 +17,13 @@ import static junit.framework.TestCase.assertTrue;
 public class EmptyStringTest {
 
 
+    @Test
+    public void method() {
+      
+        // Run your AsyncTask
+        // Use the Assert methods to verify the data
+
+    }
 
 
 }
