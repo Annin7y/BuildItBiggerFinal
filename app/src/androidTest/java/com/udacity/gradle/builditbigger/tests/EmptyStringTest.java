@@ -22,14 +22,15 @@ public class EmptyStringTest {
     //The code for the test is based on the following stackoverflow post:
     //https://stackoverflow.com/questions/2321829/android-asynctask-testing-with-android-test-framework/5722193#5722193
 
-    public void testAsynTask () throws Throwable {
+    public void testAsyncTask () throws Throwable {
         // create  a signal to let us know when our task is done.
         final CountDownLatch signal = new CountDownLatch(1);
 
-    }
+        final EndpointsAsyncTask myTask = new EndpointsAsyncTask(EndpointsAsyncTaskInterface) {
+            
+        }
 
         // create  a signal to let us know when our task is done.
-
 
     @Test
     public void method() {
@@ -38,6 +39,4 @@ public class EmptyStringTest {
         // Use the Assert methods to verify the data
 
     }
-
-
 }
