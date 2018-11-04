@@ -12,6 +12,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.TimeUnit;
 
 import static junit.framework.TestCase.assertNotNull;
 import static junit.framework.TestCase.assertTrue;
@@ -27,16 +28,45 @@ public class EmptyStringTest {
         final CountDownLatch signal = new CountDownLatch(1);
 
         final EndpointsAsyncTask myTask = new EndpointsAsyncTask(EndpointsAsyncTaskInterface) {
-            
+
         }
 
         // create  a signal to let us know when our task is done.
 
-    @Test
-    public void method() {
+        @Test
+        public void method () {
 
-        // Run your AsyncTask
-        // Use the Assert methods to verify the data
+            // Run your AsyncTask
+            // Use the Assert methods to verify the data
+
+        }
+        @Override
+        protected void onPostExecute(String result) {
+            super.onPostExecute(result);
+
+            /* This is the key, normally you would use some type of listener
+             * to notify your activity that the async call was finished.
+             *
+             * In your test method you would subscribe to that and signal
+             * from there instead.
+             */
+            signal.countDown();
+        }
+    };
+
+
+
+    ;
+// Execute the async task on the UI thread! THIS IS KEY!
+        runTestOnUiThread(new Runnable() {
+
+            @Override
+            public void run() {
+                myTask.execute();
+            }
+        });
+
+        signal.await(30, TimeUnit.SECONDS);
 
     }
-}
+    }
