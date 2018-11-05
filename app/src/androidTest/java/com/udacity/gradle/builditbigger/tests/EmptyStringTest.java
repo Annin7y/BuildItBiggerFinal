@@ -28,19 +28,15 @@ public class EmptyStringTest {
         // create  a signal to let us know when our task is done.
         final CountDownLatch signal = new CountDownLatch(1);
 
-        final EndpointsAsyncTask myTask = new EndpointsAsyncTask(EndpointsAsyncTaskInterface) {
+        final EndpointsAsyncTaskInterface myTask = new EndpointsAsyncTaskInterface() {
 
-        }
+            @Override
+            protected String doInBackground(Void... params) {
+                //Do something meaningful.
+                return "something happened!";
+            }
 
-        // create  a signal to let us know when our task is done.
 
-        @Test
-        public void method () {
-
-            // Run your AsyncTask
-            // Use the Assert methods to verify the data
-
-        }
         @Override
         protected void onPostExecute(String result) {
             super.onPostExecute(result);
@@ -51,6 +47,7 @@ public class EmptyStringTest {
              * In your test method you would subscribe to that and signal
              * from there instead.
              */
+
             signal.countDown();
         }
     };
@@ -68,6 +65,7 @@ public class EmptyStringTest {
         });
 
         signal.await(30, TimeUnit.SECONDS);
+        assertTrue();
 
     }
     }
