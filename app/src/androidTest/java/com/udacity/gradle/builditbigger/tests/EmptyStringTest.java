@@ -28,7 +28,7 @@ public class EmptyStringTest {
         // create  a signal to let us know when our task is done.
         final CountDownLatch signal = new CountDownLatch(1);
 
-        final EndpointsAsyncTaskInterface myTask = new EndpointsAsyncTaskInterface() {
+        final EndpointsAsyncTask myTask = new EndpointsAsyncTask();
 
             @Override
             protected String doInBackground(Void... params) {
