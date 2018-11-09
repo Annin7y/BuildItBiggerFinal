@@ -28,7 +28,7 @@ public class EmptyStringTest
         // create  a signal to let us know when our task is done.
         final CountDownLatch signal = new CountDownLatch(1);
 
-        final EndpointsAsyncTaskInterface myTaskInterface = new EndpointsAsyncTaskInterface()
+        final EndpointsAsyncTask myTaskInterface = new EndpointsAsyncTask(new EndpointsAsyncTaskInterface()
         {
             @Override
             public void returnJokeData(String result)
@@ -36,8 +36,17 @@ public class EmptyStringTest
                 assertNotNull(result);
                 signal.countDown();
             }
+        });
+       // new EndpointsAsyncTask(myTaskInterface).execute();
+        Runnable runTest = new Runnable()
+        {
+            @Override
+            public void run()
+            {
+                myTaskInterface.execute();
+            }
         };
-        new EndpointsAsyncTask(myTaskInterface).execute();
+        runTest.run();
         signal.await(30, TimeUnit.SECONDS);
     }
 }
