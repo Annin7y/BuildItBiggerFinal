@@ -17,7 +17,6 @@ import static junit.framework.TestCase.assertNotNull;
 @RunWith(AndroidJUnit4.class)
 public class EmptyStringTest
 {
-
     //The code for the test is based on the following:
     //https://stackoverflow.com/questions/2321829/android-asynctask-testing-with-android-test-framework/5722193#5722193
     //https://gist.github.com/he9lin/2195897
@@ -37,16 +36,9 @@ public class EmptyStringTest
                 signal.countDown();
             }
         });
-       // new EndpointsAsyncTask(myTaskInterface).execute();
-        Runnable runTest = new Runnable()
-        {
-            @Override
-            public void run()
-            {
-                myTaskInterface.execute();
-            }
-        };
-        runTest.run();
+
+        myTaskInterface.execute();
+
         signal.await(30, TimeUnit.SECONDS);
     }
 }
