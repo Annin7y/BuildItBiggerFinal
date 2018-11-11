@@ -66,19 +66,17 @@ public class MainActivity extends AppCompatActivity implements EndpointsAsyncTas
 //        intent.putExtra(JOKE_STRING, myJokesFetch.getRandomJoke());
 //        startActivity(intent);
 
-
         EndpointsAsyncTask myTask = new EndpointsAsyncTask(this);
         myTask.execute();
-
     }
 
     @Override
-    public void returnJokeData(String result) {
+    public void returnJokeData(String result)
+    {
         Intent intent = new Intent(this, JokesActivity.class);
         intent.setAction(Intent.ACTION_SEND);
         intent.putExtra(MainActivity.JOKE_STRING, result);
         startActivity(intent);
     }
-
 }
 
