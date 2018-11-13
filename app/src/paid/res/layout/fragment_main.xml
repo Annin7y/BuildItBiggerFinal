@@ -11,9 +11,16 @@
     tools:context=".paid.MainActivityFragment">
 
     <TextView
+        android:id="@+id/hello_paid_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hello_world_paid" />
+
+    <TextView
         android:id="@+id/instructions_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/hello_paid_text_view"
         android:text="@string/instructions" />
 
     <Button
