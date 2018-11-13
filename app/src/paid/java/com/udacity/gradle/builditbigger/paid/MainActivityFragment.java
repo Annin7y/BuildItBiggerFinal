@@ -11,7 +11,7 @@ import com.udacity.gradle.builditbigger.R;
 
 public class MainActivityFragment extends Fragment
 {
-
+    //Main Activity Fragment copied from main directory; AdView code removed
     public MainActivityFragment()
     {
     }
