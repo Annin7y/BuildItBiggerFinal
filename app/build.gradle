@@ -63,11 +63,11 @@ android {
 
         free {
             manifest.srcFile 'src/free/AndroidManifest.xml'
-            assets.srcDirs = ['src/free/assets']
+            java.srcDirs = ['src/free/java']
             res.srcDirs = ['src/free/res']
         }
         paid {
-            assets.srcDirs = ['src/paid/assets']
+
             res.srcDirs = ['src/paid/res']
             java.srcDirs = ['src/paid/java']
         }
