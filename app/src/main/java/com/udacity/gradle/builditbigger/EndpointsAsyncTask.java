@@ -20,26 +20,25 @@ public class EndpointsAsyncTask extends AsyncTask<Void, Void, String>
     //Some original code commented out
 
     private static MyApi myApiService = null;
-   // private Context context;
+    // private Context context;
 
     private static final String TAG = EndpointsAsyncTaskInterface.class.getSimpleName();
     private EndpointsAsyncTaskInterface listener;
 
-    public EndpointsAsyncTask(EndpointsAsyncTaskInterface listener)
-    {
+    public EndpointsAsyncTask(EndpointsAsyncTaskInterface listener) {
         this.listener = listener;
     }
 
-        @Override
+    @Override
     protected void onPreExecute()
     {
         super.onPreExecute();
     }
 
     @Override
-    protected String doInBackground(Void ... params)
+    protected String doInBackground(Void... params)
     {
-        if(myApiService == null)
+        if (myApiService == null)
         {  // Only do this once
             MyApi.Builder builder = new MyApi.Builder(AndroidHttp.newCompatibleTransport(),
                     new AndroidJsonFactory(), null)
@@ -47,11 +46,9 @@ public class EndpointsAsyncTask extends AsyncTask<Void, Void, String>
                     // - 10.0.2.2 is localhost's IP address in Android emulator
                     // - turn off compression when running against local devappserver
                     .setRootUrl("http://10.0.2.2:8080/_ah/api/")
-                    .setGoogleClientRequestInitializer(new GoogleClientRequestInitializer()
-                    {
+                    .setGoogleClientRequestInitializer(new GoogleClientRequestInitializer() {
                         @Override
-                        public void initialize(AbstractGoogleClientRequest<?> abstractGoogleClientRequest) throws IOException
-                        {
+                        public void initialize(AbstractGoogleClientRequest<?> abstractGoogleClientRequest) throws IOException {
                             abstractGoogleClientRequest.setDisableGZipContent(true);
                         }
                     });
@@ -60,8 +57,8 @@ public class EndpointsAsyncTask extends AsyncTask<Void, Void, String>
             myApiService = builder.build();
         }
 
-       // context = params[0];
-       // String name = params[0].second;
+        // context = params[0];
+        // String name = params[0].second;
 
         try
         {
@@ -69,20 +66,19 @@ public class EndpointsAsyncTask extends AsyncTask<Void, Void, String>
         }
         catch (IOException e)
         {
-            return e.getMessage();
+            //In case AsyncTask fails, return null, not e.getMessage();
+            // return e.getMessage();
+            return null;
         }
     }
 
     @Override
     protected void onPostExecute(String result)
     {
-       // Toast.makeText(context,result, Toast.LENGTH_LONG).show();
+        // Toast.makeText(context,result, Toast.LENGTH_LONG).show();
         super.onPostExecute(result);
 
-        if (result != null)
-        {
-            listener.returnJokeData(result);
-        }
+        listener.returnJokeData(result);
     }
 }
 
