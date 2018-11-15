@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity implements EndpointsAsyncTas
     {
         Intent intent = new Intent(this, JokesActivity.class);
         intent.setAction(Intent.ACTION_SEND);
-        intent.putExtra(MainActivity.JOKE_STRING, result);
+        intent.putExtra(JokesActivity.JOKE_STRING, result);
         startActivity(intent);
     }
 }
