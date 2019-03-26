@@ -16,8 +16,12 @@ buildscript {
 
 task customTask {
     dependsOn(":backend:appengineStart")
-    mustRunAfter(":backend:appengineStart")
     dependsOn(":app:connectedAndroidTest")
+    mustRunAfter(":backend:appengineStart")
+    doLast {
+        println "Task [jokeAppCustomTask] completed >> Task cycle completed"
+    }
+
     finalizedBy ":backend:appengineStop"
 }
 
