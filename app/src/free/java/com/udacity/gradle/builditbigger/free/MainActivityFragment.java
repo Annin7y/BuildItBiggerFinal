@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 import com.udacity.gradle.builditbigger.R;
 
 public class MainActivityFragment extends Fragment
