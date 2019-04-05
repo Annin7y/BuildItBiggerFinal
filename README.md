@@ -118,6 +118,10 @@ string. For a refresher on setting up Android tests, check out demo 4.09.
 Add free and paid product flavors to your app. Remove the ad (and any
 dependencies you can) from the paid flavor.
 
+### Screenshot
+
+![build_bigger_1](https://user-images.githubusercontent.com/22602021/55059251-dd299980-5044-11e9-88d2-624e1d814c4a.png)
+
 ## Optional Tasks
 
 For extra practice to make your project stand out, complete the following tasks.
