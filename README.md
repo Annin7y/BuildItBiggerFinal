@@ -124,7 +124,7 @@ dependencies you can) from the paid flavor.
 
 ### Screenshot (Joke Display)
 
-![build_bigger_2](https://user-images.githubusercontent.com/22602021/55666211-3b126a00-5819-11e9-9bec-f14ba53a5a1a.png)
+![build_bigger_2](https://user-images.githubusercontent.com/22602021/55666231-83318c80-5819-11e9-8e9f-153d0ced34ac.png)
 
 ## Optional Tasks
 
