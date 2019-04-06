@@ -122,6 +122,10 @@ dependencies you can) from the paid flavor.
 
 ![build_bigger_1](https://user-images.githubusercontent.com/22602021/55059251-dd299980-5044-11e9-88d2-624e1d814c4a.png)
 
+### Screenshot (Joke Display)
+
+![build_bigger_2](https://user-images.githubusercontent.com/22602021/55666178-bb849b00-5818-11e9-831d-62e462974bc0.png)
+
 ## Optional Tasks
 
 For extra practice to make your project stand out, complete the following tasks.
