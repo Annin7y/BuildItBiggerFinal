@@ -14,17 +14,33 @@ buildscript {
     }
 }
 
+task startAppEngine (dependsOn: ":backend:appengineStart") {
+    doLast {
+        println "Task [startAppEngine] completed >> App Engine started"
+    }
+}
 
-task customTask {
-    dependsOn(":backend:appengineStart")
-    dependsOn(":app:connectedAndroidTest")
-    mustRunAfter(":backend:appengineStart")
+task runAndroidTest (dependsOn: ":app:connectedAndroidTest") {
+    doLast {
+        println "Task [runAndroidTest] completed >> Test reports can be found at project-folder/app/build/reports directory"
+    }
+}
+
+task stopAppEngine (dependsOn: ":backend:appengineStop") {
+    doLast {
+        println "Task [stopAppEngine] completed >> App Engine stopped"
+    }
+}
+
+task jokeAppCustomTask (dependsOn: ["startAppEngine", "runAndroidTest", "stopAppEngine"]) {
     doLast {
         println "Task [jokeAppCustomTask] completed >> Task cycle completed"
     }
-
-    finalizedBy ":backend:appengineStop"
 }
+
+runAndroidTest.mustRunAfter "startAppEngine"
+runAndroidTest.finalizedBy "stopAppEngine"
+
 
 
 
