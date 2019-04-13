@@ -18,4 +18,9 @@ public class BaseMainActivityFragment extends Fragment implements EndpointsAsync
         intent.putExtra(JokesActivity.JOKE_STRING, result);
         startActivity(intent);
     }
-}
+
+    public void tellJoke(View view)
+    {
+    }
+   }
+
