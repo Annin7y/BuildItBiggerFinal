@@ -13,7 +13,7 @@ import android.widget.Toast;
 import builditbigger.android.my.annin.jokeslibrary.JokesActivity;
 
 
-public class MainActivity extends AppCompatActivity implements EndpointsAsyncTaskInterface
+public class MainActivity extends AppCompatActivity //implements EndpointsAsyncTaskInterface
 {
     //Code moved to BaseMainActivityFragment after implementing an Interstitial Ad
    // public static final String JOKE_STRING = "joke_string";
@@ -71,13 +71,13 @@ public class MainActivity extends AppCompatActivity implements EndpointsAsyncTas
         myTask.execute();
     }
 
-    @Override
-    public void returnJokeData(String result)
-    {
-        Intent intent = new Intent(this, JokesActivity.class);
-        intent.setAction(Intent.ACTION_SEND);
-        intent.putExtra(JokesActivity.JOKE_STRING, result);
-        startActivity(intent);
-    }
+//    @Override
+//    public void returnJokeData(String result)
+//    {
+//        Intent intent = new Intent(this, JokesActivity.class);
+//        intent.setAction(Intent.ACTION_SEND);
+//        intent.putExtra(JokesActivity.JOKE_STRING, result);
+//        startActivity(intent);
+//    }
 }
 
