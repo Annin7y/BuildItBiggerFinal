@@ -10,9 +10,11 @@ import android.widget.TextView;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
+import com.udacity.gradle.builditbigger.BaseMainActivityFragment;
+import com.udacity.gradle.builditbigger.EndpointsAsyncTask;
 import com.udacity.gradle.builditbigger.R;
 
-public class MainActivityFragment extends Fragment
+public class MainActivityFragment extends BaseMainActivityFragment
 {
     //Main Activity Fragment copied from main directory
     public MainActivityFragment()
@@ -39,4 +41,26 @@ public class MainActivityFragment extends Fragment
         mAdView.loadAd(adRequest);
         return root;
     }
+
+    public void tellJoke(View view)
+    {
+        // JokesFetch myJokesFetch = new JokesFetch();
+
+        // default code below replaced with the code referencing JokesLibrary
+        // Toast.makeText(this, "derp", Toast.LENGTH_SHORT).show();
+        // Message commented out after adding JokesActivity class
+        // Toast.makeText(this, myJokesFetch.getRandomJoke(), Toast.LENGTH_SHORT).show();
+
+        // Code structure below is based on the answer given on this site:
+        // https://www.c-sharpcorner.com/article/how-to-send-the-data-one-activity-to-another-activity-in-android-application/
+        // Code commented out after implementing GCE
+//        Intent intent = new Intent(this, JokesActivity.class);
+//        intent.setAction(Intent.ACTION_SEND);
+//        intent.putExtra(JOKE_STRING, myJokesFetch.getRandomJoke());
+//        startActivity(intent);
+
+         EndpointsAsyncTask myTask = new EndpointsAsyncTask(this);
+         myTask.execute();
+    }
+
 }

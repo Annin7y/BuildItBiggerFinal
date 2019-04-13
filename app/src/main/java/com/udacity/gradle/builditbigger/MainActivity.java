@@ -50,8 +50,8 @@ public class MainActivity extends AppCompatActivity //implements EndpointsAsyncT
         return super.onOptionsItemSelected(item);
     }
 
-    public void tellJoke(View view)
-    {
+//    public void tellJoke(View view)
+//    {
         // JokesFetch myJokesFetch = new JokesFetch();
 
         // default code below replaced with the code referencing JokesLibrary
@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity //implements EndpointsAsyncT
 
        // EndpointsAsyncTask myTask = new EndpointsAsyncTask(this);
        // myTask.execute();
-    }
+   // }
 
 //    @Override
 //    public void returnJokeData(String result)
