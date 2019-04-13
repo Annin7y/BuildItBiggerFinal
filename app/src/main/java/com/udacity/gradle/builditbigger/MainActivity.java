@@ -15,7 +15,8 @@ import builditbigger.android.my.annin.jokeslibrary.JokesActivity;
 
 public class MainActivity extends AppCompatActivity implements EndpointsAsyncTaskInterface
 {
-    public static final String JOKE_STRING = "joke_string";
+    //Code moved to BaseMainActivityFragment after implementing an Interstitial Ad
+   // public static final String JOKE_STRING = "joke_string";
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
