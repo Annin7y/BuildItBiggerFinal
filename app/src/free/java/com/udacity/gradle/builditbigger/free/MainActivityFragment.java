@@ -41,7 +41,7 @@ public class MainActivityFragment extends BaseMainActivityFragment
         mAdView.loadAd(adRequest);
         return root;
     }
-    
+
 @Override
     public void tellJoke(View view)
     {
