@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
 import com.udacity.gradle.builditbigger.BaseMainActivityFragment;
 import com.udacity.gradle.builditbigger.EndpointsAsyncTask;
@@ -22,6 +23,8 @@ public class MainActivityFragment extends BaseMainActivityFragment
     }
 
     TextView helloStringFree;
+
+    private InterstitialAd interstitialAd;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
