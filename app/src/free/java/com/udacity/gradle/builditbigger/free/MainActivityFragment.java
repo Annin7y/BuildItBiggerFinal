@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
@@ -28,11 +29,10 @@ public class MainActivityFragment extends BaseMainActivityFragment
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState)
-    {
+                             Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_main, container, false);
 
-        helloStringFree = (TextView)root.findViewById(R.id.hello_free_text_view);
+        helloStringFree = (TextView) root.findViewById(R.id.hello_free_text_view);
 
         AdView mAdView = (AdView) root.findViewById(R.id.adView);
         // Create an ad request. Check logcat output for the hashed device ID to
@@ -42,9 +42,19 @@ public class MainActivityFragment extends BaseMainActivityFragment
                 .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
                 .build();
         mAdView.loadAd(adRequest);
-        return root;
-    }
 
+
+        interstitialAd.setAdListener(new AdListener() {
+            public void onAdLoaded() {
+                if (interstitialAd.isLoaded()) {
+                    interstitialAd.show();
+
+                }
+            }
+        });
+        return root;
+
+        }
 @Override
     public void tellJoke(View view)
     {
@@ -66,20 +76,5 @@ public class MainActivityFragment extends BaseMainActivityFragment
          EndpointsAsyncTask myTask = new EndpointsAsyncTask(this);
          myTask.execute();
     }
-
-    interstitialAd.setOnClickListener(new View.OnClickListener()
-    {
-
-    @Override
-    public void onClick(View v){
-        if (interstitialAd.isLoaded()) {
-            interstitialAd.show();
-        }
-    }
-});
-
-
-
-
 
 }
