@@ -67,4 +67,19 @@ public class MainActivityFragment extends BaseMainActivityFragment
          myTask.execute();
     }
 
+    interstitialAd.setOnClickListener(new View.OnClickListener()
+    {
+
+    @Override
+    public void onClick(View v){
+        if (interstitialAd.isLoaded()) {
+            interstitialAd.show();
+        }
+    }
+});
+
+
+
+
+
 }
