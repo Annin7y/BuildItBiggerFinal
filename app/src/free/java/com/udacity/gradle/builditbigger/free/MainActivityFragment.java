@@ -1,5 +1,6 @@
 package com.udacity.gradle.builditbigger.free;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -15,6 +16,8 @@ import com.google.android.gms.ads.MobileAds;
 import com.udacity.gradle.builditbigger.BaseMainActivityFragment;
 import com.udacity.gradle.builditbigger.EndpointsAsyncTask;
 import com.udacity.gradle.builditbigger.R;
+
+import builditbigger.android.my.annin.jokeslibrary.JokesActivity;
 
 public class MainActivityFragment extends BaseMainActivityFragment
 {
@@ -76,5 +79,16 @@ public class MainActivityFragment extends BaseMainActivityFragment
          EndpointsAsyncTask myTask = new EndpointsAsyncTask(this);
          myTask.execute();
     }
+
+    @Override
+    public void returnJokeData(String result)
+    {
+        Intent intent = new Intent(getActivity(), JokesActivity.class);
+        intent.setAction(Intent.ACTION_SEND);
+        intent.putExtra(JokesActivity.JOKE_STRING, result);
+        startActivity(intent);
+    }
+
+
 
 }
