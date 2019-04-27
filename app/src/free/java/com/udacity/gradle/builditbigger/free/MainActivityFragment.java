@@ -45,6 +45,9 @@ public class MainActivityFragment extends BaseMainActivityFragment
                 .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
                 .build();
         mAdView.loadAd(adRequest);
+
+        MobileAds.initialize(getActivity()), "ca-app-pub-4761500786576152~8215465788");
+        interstitialAd = new InterstitialAd(getContext());
         interstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
 
         interstitialAd.setAdListener(new AdListener() {
