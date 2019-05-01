@@ -50,12 +50,22 @@ public class MainActivityFragment extends BaseMainActivityFragment
         interstitialAd = new InterstitialAd(getActivity().getApplicationContext());
         interstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
 
-        interstitialAd.setAdListener(new AdListener() {
-            public void onAdLoaded() {
-                if (interstitialAd.isLoaded()) {
+        interstitialAd.setAdListener(new AdListener()
+        {
+            public void onAdLoaded()
+            {
+                if (interstitialAd.isLoaded())
+                {
                     interstitialAd.show();
 
                 }
+
+
+            }
+            @Override
+            public void onAdClosed() {
+                super.onAdClosed();
+
             }
         });
         return root;
