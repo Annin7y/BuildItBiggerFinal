@@ -73,6 +73,18 @@ public class MainActivityFragment extends BaseMainActivityFragment
 
             }
         });
+
+        jokeButton.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                // do something
+            }
+        });
+
+
+
         return root;
 
         }
