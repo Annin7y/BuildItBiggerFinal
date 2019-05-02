@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.android.gms.ads.AdListener;
@@ -30,12 +31,16 @@ public class MainActivityFragment extends BaseMainActivityFragment
 
     private InterstitialAd interstitialAd;
 
+    private Button jokeButton;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_main, container, false);
 
         helloStringFree = (TextView) root.findViewById(R.id.hello_free_text_view);
+
+        jokeButton = (Button)getView().findViewById(R.id.joke_button);
 
         AdView mAdView = (AdView) root.findViewById(R.id.adView);
         // Create an ad request. Check logcat output for the hashed device ID to
