@@ -114,13 +114,14 @@ public class MainActivityFragment extends BaseMainActivityFragment
     public void returnJokeData(String result)
     {
 
-            if (interstitialAd.isLoaded()) {
+            if (interstitialAd.isLoaded())
+            {
                 interstitialAd.show();
-
+            }
                 Intent intent = new Intent(getActivity(), JokesActivity.class);
                 intent.setAction(Intent.ACTION_SEND);
                 intent.putExtra(JokesActivity.JOKE_STRING, result);
                 startActivity(intent);
             }
         }
-}
+
