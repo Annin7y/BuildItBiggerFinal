@@ -40,7 +40,7 @@ public class MainActivityFragment extends BaseMainActivityFragment
 
         helloStringFree = (TextView) root.findViewById(R.id.hello_free_text_view);
 
-        jokeButton = (Button)getView().findViewById(R.id.joke_button);
+        jokeButton = (Button) root.findViewById(R.id.joke_button);
 
         AdView mAdView = (AdView) root.findViewById(R.id.adView);
         // Create an ad request. Check logcat output for the hashed device ID to
@@ -81,6 +81,7 @@ public class MainActivityFragment extends BaseMainActivityFragment
             public void onClick(View v)
             {
                 // do something
+
             }
         });
 
@@ -89,6 +90,7 @@ public class MainActivityFragment extends BaseMainActivityFragment
         return root;
 
         }
+
 @Override
     public void tellJoke(View view)
     {
