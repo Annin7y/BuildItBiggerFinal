@@ -53,7 +53,8 @@ public class MainActivityFragment extends BaseMainActivityFragment
 
         MobileAds.initialize(getActivity(), "ca-app-pub-4761500786576152~8215465788");
         interstitialAd = new InterstitialAd(getActivity().getApplicationContext());
-        interstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        String interstitialAdId = getActivity().getApplicationContext().getString(R.string.interstitial_ad_id);
+        interstitialAd.setAdUnitId(interstitialAdId);
 
         interstitialAd.setAdListener(new AdListener()
         {
