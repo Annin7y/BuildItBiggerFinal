@@ -19,7 +19,7 @@ public class BaseMainActivityFragment extends Fragment implements EndpointsAsync
         startActivity(intent);
     }
 
-    public void tellJoke(View view)
+    public void tellJoke()
     {
     }
    }
