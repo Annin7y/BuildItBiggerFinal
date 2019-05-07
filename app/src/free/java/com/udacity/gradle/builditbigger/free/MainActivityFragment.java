@@ -80,6 +80,7 @@ public class MainActivityFragment extends BaseMainActivityFragment
             {
                 // do something
                 tellJoke();
+
             }
         });
 

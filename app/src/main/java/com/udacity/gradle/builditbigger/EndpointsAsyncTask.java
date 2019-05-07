@@ -2,6 +2,7 @@ package com.udacity.gradle.builditbigger;
 
 import android.content.Context;
 import android.os.AsyncTask;
+import android.util.Log;
 import android.util.Pair;
 import android.widget.Toast;
 
@@ -62,12 +63,14 @@ public class EndpointsAsyncTask extends AsyncTask<Void, Void, String>
 
         try
         {
+            Log.i("backend", myApiService.getJokeFromRepository().execute().getData()); // logs the result
             return myApiService.getJokeFromRepository().execute().getData();
         }
         catch (IOException e)
         {
             //In case AsyncTask fails, return null, not e.getMessage();
             // return e.getMessage();
+            Log.i("backend", e.getMessage()); // logs the error message
             return null;
         }
     }
