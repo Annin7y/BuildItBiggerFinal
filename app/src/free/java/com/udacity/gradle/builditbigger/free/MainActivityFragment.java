@@ -20,11 +20,9 @@ import com.udacity.gradle.builditbigger.R;
 
 import builditbigger.android.my.annin.jokeslibrary.JokesActivity;
 
-public class MainActivityFragment extends BaseMainActivityFragment
-{
+public class MainActivityFragment extends BaseMainActivityFragment {
     //Main Activity Fragment copied from main directory
-    public MainActivityFragment()
-    {
+    public MainActivityFragment() {
     }
 
     TextView helloStringFree;
@@ -32,6 +30,8 @@ public class MainActivityFragment extends BaseMainActivityFragment
     private InterstitialAd interstitialAd;
 
     private Button jokeButton;
+
+    private String jokeVar;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -56,20 +56,22 @@ public class MainActivityFragment extends BaseMainActivityFragment
         String interstitialAdId = getActivity().getApplicationContext().getString(R.string.interstitial_ad_id);
         interstitialAd.setAdUnitId(interstitialAdId);
 
-        interstitialAd.setAdListener(new AdListener()
-        {
-//            public void onAdLoaded()
+        interstitialAd.setAdListener(new AdListener() {
+            //            public void onAdLoaded()
 //            {
 //                if (interstitialAd.isLoaded())
 //                {
 //                    interstitialAd.show();
 //
 //                }
- //           }
+            //           }
             @Override
             public void onAdClosed() {
                 super.onAdClosed();
-
+                Intent intent = new Intent(getActivity(), JokesActivity.class);
+                intent.setAction(Intent.ACTION_SEND);
+                intent.putExtra(JokesActivity.JOKE_STRING, jokeVar);
+                startActivity(intent);
             }
         });
 
@@ -87,9 +89,9 @@ public class MainActivityFragment extends BaseMainActivityFragment
 
         return root;
 
-        }
+    }
 
-@Override
+    @Override
     public void tellJoke()
     {
         // JokesFetch myJokesFetch = new JokesFetch();
@@ -107,22 +109,21 @@ public class MainActivityFragment extends BaseMainActivityFragment
 //        intent.putExtra(JOKE_STRING, myJokesFetch.getRandomJoke());
 //        startActivity(intent);
 
-         EndpointsAsyncTask myTask = new EndpointsAsyncTask(this);
-         myTask.execute();
+        EndpointsAsyncTask myTask = new EndpointsAsyncTask(this);
+        myTask.execute();
     }
 
     @Override
     public void returnJokeData(String result)
     {
-
-            if (interstitialAd.isLoaded())
-            {
-                interstitialAd.show();
-            }
-                Intent intent = new Intent(getActivity(), JokesActivity.class);
-                intent.setAction(Intent.ACTION_SEND);
-                intent.putExtra(JokesActivity.JOKE_STRING, result);
-                startActivity(intent);
-            }
+        jokeVar = result;
+        if (interstitialAd.isLoaded()) {
+            interstitialAd.show();
         }
 
+    }
+
+    private void requestNewInterstitial() {
+
+    }
+}
