@@ -56,6 +56,8 @@ public class MainActivityFragment extends BaseMainActivityFragment {
         String interstitialAdId = getActivity().getApplicationContext().getString(R.string.interstitial_ad_id);
         interstitialAd.setAdUnitId(interstitialAdId);
 
+        interstitialAd.loadAd(adRequest);
+
         interstitialAd.setAdListener(new AdListener() {
             //            public void onAdLoaded()
 //            {
@@ -68,7 +70,7 @@ public class MainActivityFragment extends BaseMainActivityFragment {
             @Override
             public void onAdClosed() {
                 super.onAdClosed();
-               
+
             }
         });
 
@@ -125,7 +127,4 @@ public class MainActivityFragment extends BaseMainActivityFragment {
 
     }
 
-    private void requestNewInterstitial() {
-
-    }
 }
