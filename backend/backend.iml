@@ -68,5 +68,6 @@
     <orderEntry type="library" exported="" name="Gradle: transaction-api-1.1" level="project" />
     <orderEntry type="module" module-name="jokesdepository" exported="" />
     <orderEntry type="module" module-name="jokesdepository" exported="" />
+    <orderEntry type="module" module-name="jokesdepository" exported="" />
   </component>
 </module>

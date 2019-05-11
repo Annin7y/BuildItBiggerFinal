@@ -37,6 +37,19 @@ public class MainActivityFragment extends BaseMainActivityFragment
 
         jokeButton = (Button) root.findViewById(R.id.joke_button);
 
+        jokeButton.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                // do something
+                tellJoke();
+
+            }
+        });
+
+
+
         return root;
     }
 
