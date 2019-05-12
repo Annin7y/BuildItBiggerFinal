@@ -61,17 +61,11 @@ public class MainActivityFragment extends BaseMainActivityFragment {
 
         interstitialAd.loadAd(adRequest);
 
-        interstitialAd.setAdListener(new AdListener() {
-            //            public void onAdLoaded()
-//            {
-//                if (interstitialAd.isLoaded())
-//                {
-//                    interstitialAd.show();
-//
-//                }
-            //           }
+        interstitialAd.setAdListener(new AdListener()
+        {
             @Override
-            public void onAdClosed() {
+            public void onAdClosed()
+            {
                 super.onAdClosed();
                 Intent intent = new Intent(getActivity(), JokesActivity.class);
                 intent.setAction(Intent.ACTION_SEND);
@@ -91,9 +85,7 @@ public class MainActivityFragment extends BaseMainActivityFragment {
             }
         });
 
-
         return root;
-
     }
 
     @Override
@@ -122,7 +114,8 @@ public class MainActivityFragment extends BaseMainActivityFragment {
     public void returnJokeData(String result)
     {
         jokeVar = result;
-        if (interstitialAd.isLoaded()) {
+        if (interstitialAd.isLoaded())
+        {
             interstitialAd.show();
         }
 
