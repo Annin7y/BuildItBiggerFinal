@@ -42,6 +42,9 @@ public class MainActivityFragment extends BaseMainActivityFragment {
 
         jokeButton = (Button) root.findViewById(R.id.joke_button);
 
+        // Initialize the loading indicator
+        ProgressBar indicator = (ProgressBar) root.findViewById(R.id.my_loading_indicator);
+
         AdView mAdView = (AdView) root.findViewById(R.id.adView);
         // Create an ad request. Check logcat output for the hashed device ID to
         // get test ads on a physical device. e.g.

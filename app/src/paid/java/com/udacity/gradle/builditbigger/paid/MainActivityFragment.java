@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.udacity.gradle.builditbigger.BaseMainActivityFragment;
@@ -34,6 +35,9 @@ public class MainActivityFragment extends BaseMainActivityFragment
         View root = inflater.inflate(R.layout.fragment_main, container, false);
 
         helloStringPaid = (TextView)root.findViewById(R.id.hello_paid_text_view);
+
+        // Initialize the loading indicator
+        ProgressBar indicator = (ProgressBar) root.findViewById(R.id.my_loading_indicator);
 
         jokeButton = (Button) root.findViewById(R.id.joke_button);
 
