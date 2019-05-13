@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.google.android.gms.ads.AdListener;
@@ -33,6 +34,8 @@ public class MainActivityFragment extends BaseMainActivityFragment {
 
     private String jokeVar;
 
+    private ProgressBar indicator;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -43,7 +46,7 @@ public class MainActivityFragment extends BaseMainActivityFragment {
         jokeButton = (Button) root.findViewById(R.id.joke_button);
 
         // Initialize the loading indicator
-        ProgressBar indicator = (ProgressBar) root.findViewById(R.id.my_loading_indicator);
+        indicator = (ProgressBar) root.findViewById(R.id.my_loading_indicator);
 
         AdView mAdView = (AdView) root.findViewById(R.id.adView);
         // Create an ad request. Check logcat output for the hashed device ID to
@@ -106,6 +109,9 @@ public class MainActivityFragment extends BaseMainActivityFragment {
 //        intent.putExtra(JOKE_STRING, myJokesFetch.getRandomJoke());
 //        startActivity(intent);
 
+        // Show the loading indicator before running the AsyncTask
+        indicator.setVisibility(ProgressBar.VISIBLE);
+
         EndpointsAsyncTask myTask = new EndpointsAsyncTask(this);
         myTask.execute();
     }
@@ -118,6 +124,9 @@ public class MainActivityFragment extends BaseMainActivityFragment {
         {
             interstitialAd.show();
         }
+
+        // Hide it after it finishes
+        indicator.setVisibility(ProgressBar.INVISIBLE);
 
     }
 }
