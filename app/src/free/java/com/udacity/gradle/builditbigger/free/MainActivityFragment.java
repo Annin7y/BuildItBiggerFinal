@@ -110,7 +110,7 @@ public class MainActivityFragment extends BaseMainActivityFragment {
 //        startActivity(intent);
 
         // Show the loading indicator before running the AsyncTask
-        indicator.setVisibility(ProgressBar.VISIBLE);
+         indicator.setVisibility(ProgressBar.VISIBLE);
 
         EndpointsAsyncTask myTask = new EndpointsAsyncTask(this);
         myTask.execute();
@@ -126,7 +126,7 @@ public class MainActivityFragment extends BaseMainActivityFragment {
         }
 
         // Hide it after it finishes
-        indicator.setVisibility(ProgressBar.INVISIBLE);
+        //indicator.setVisibility(ProgressBar.INVISIBLE);
 
     }
 }

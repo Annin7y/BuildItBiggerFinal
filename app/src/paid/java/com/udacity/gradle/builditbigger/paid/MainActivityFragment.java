@@ -27,6 +27,7 @@ public class MainActivityFragment extends BaseMainActivityFragment
 
     private Button jokeButton;
 
+    private ProgressBar indicator;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -37,7 +38,7 @@ public class MainActivityFragment extends BaseMainActivityFragment
         helloStringPaid = (TextView)root.findViewById(R.id.hello_paid_text_view);
 
         // Initialize the loading indicator
-        ProgressBar indicator = (ProgressBar) root.findViewById(R.id.my_loading_indicator);
+        indicator = (ProgressBar) root.findViewById(R.id.my_loading_indicator);
 
         jokeButton = (Button) root.findViewById(R.id.joke_button);
 
@@ -61,6 +62,9 @@ public class MainActivityFragment extends BaseMainActivityFragment
     public void tellJoke()
     {
 
+        // Show the loading indicator before running the AsyncTask
+        indicator.setVisibility(ProgressBar.VISIBLE);
+
         EndpointsAsyncTask myTask = new EndpointsAsyncTask(this);
         myTask.execute();
     }
@@ -72,6 +76,10 @@ public class MainActivityFragment extends BaseMainActivityFragment
         intent.setAction(Intent.ACTION_SEND);
         intent.putExtra(JokesActivity.JOKE_STRING, result);
         startActivity(intent);
+
+        // Hide it after it finishes
+        //indicator.setVisibility(ProgressBar.INVISIBLE);
+
     }
 
     }
