@@ -126,7 +126,7 @@ public class MainActivityFragment extends BaseMainActivityFragment {
         }
 
         // Hide it after it finishes
-        //indicator.setVisibility(ProgressBar.INVISIBLE);
+       indicator.setVisibility(ProgressBar.INVISIBLE);
 
     }
 }

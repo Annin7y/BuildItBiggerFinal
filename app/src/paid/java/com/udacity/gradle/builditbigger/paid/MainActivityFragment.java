@@ -78,7 +78,7 @@ public class MainActivityFragment extends BaseMainActivityFragment
         startActivity(intent);
 
         // Hide it after it finishes
-        //indicator.setVisibility(ProgressBar.INVISIBLE);
+        indicator.setVisibility(ProgressBar.INVISIBLE);
 
     }
 
