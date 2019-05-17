@@ -2,6 +2,7 @@ package com.udacity.gradle.builditbigger.free;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -124,6 +125,9 @@ public class MainActivityFragment extends BaseMainActivityFragment {
         {
             interstitialAd.show();
         }
+
+       //Debugging to see how the Loading Indicator is displayed
+       // SystemClock.sleep(2000);
 
         // Hide it after it finishes
        indicator.setVisibility(ProgressBar.INVISIBLE);
