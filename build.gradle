@@ -43,9 +43,6 @@ task jokeAppCustomTask { dependsOn "startAppEngine", "runAndroidTest"
     }
 }
 
-runAndroidTest.mustRunAfter "startAppEngine"
-runAndroidTest.finalizedBy "stopAppEngine"
-
 
 allprojects {
     repositories {
