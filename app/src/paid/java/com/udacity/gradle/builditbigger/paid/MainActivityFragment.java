@@ -72,13 +72,14 @@ public class MainActivityFragment extends BaseMainActivityFragment
     @Override
     public void returnJokeData(String result)
     {
+        // Hide it after it finishes
+        indicator.setVisibility(ProgressBar.INVISIBLE);
+
         Intent intent = new Intent(getActivity(), JokesActivity.class);
         intent.setAction(Intent.ACTION_SEND);
         intent.putExtra(JokesActivity.JOKE_STRING, result);
         startActivity(intent);
 
-        // Hide it after it finishes
-        indicator.setVisibility(ProgressBar.INVISIBLE);
 
     }
 
