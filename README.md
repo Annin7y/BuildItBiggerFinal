@@ -141,7 +141,7 @@ Display the ad after the user hits the button, but before the joke is shown.
 
 https://developers.google.com/mobile-ads-sdk/docs/admob/android/interstitial
 
-![build_bigger_interAd_crop](https://user-images.githubusercontent.com/22602021/60378227-4a0a5200-99ed-11e9-8c09-89162ef45cad.png)
+![build_bigger_interAd_crop](https://user-images.githubusercontent.com/22602021/60378258-d157c580-99ed-11e9-9089-3a4b27696016.png)
 
 ### Add Loading Indicator
 
