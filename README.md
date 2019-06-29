@@ -123,7 +123,7 @@ dependencies you can) from the paid flavor.
 ![build_bigger_1](https://user-images.githubusercontent.com/22602021/55059251-dd299980-5044-11e9-88d2-624e1d814c4a.png)
 
 ### Screenshot (Main Activity - Free Version)
-![build_bigger_testAd_crop](https://user-images.githubusercontent.com/22602021/60377413-bb91d280-99e4-11e9-8c5d-f998df872e0c.png)
+
 
 ### Screenshot (Joke Display)
 
