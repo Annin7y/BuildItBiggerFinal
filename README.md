@@ -124,6 +124,7 @@ dependencies you can) from the paid flavor.
 
 ### Screenshot (Main Activity - Free Version)
 
+![build_bigger_testAd_crop](https://user-images.githubusercontent.com/22602021/60378091-5db4b900-99eb-11e9-8fd8-848f04129bbb.png)
 
 ### Screenshot (Joke Display)
 
