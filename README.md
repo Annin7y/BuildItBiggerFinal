@@ -122,6 +122,10 @@ dependencies you can) from the paid flavor.
 
 ![build_bigger_1](https://user-images.githubusercontent.com/22602021/55059251-dd299980-5044-11e9-88d2-624e1d814c4a.png)
 
+### Screenshot (Main Activity - Free Version)
+
+![build_bigger_testAd_crop](https://user-images.githubusercontent.com/22602021/60378200-f992f480-99ec-11e9-9e10-1ef0a8f2f6b5.png)
+
 ### Screenshot (Joke Display)
 
 ![build_bigger_2](https://user-images.githubusercontent.com/22602021/55666231-83318c80-5819-11e9-8e9f-153d0ced34ac.png)
@@ -136,6 +140,8 @@ Follow these instructions to add an interstitial ad to the free version.
 Display the ad after the user hits the button, but before the joke is shown.
 
 https://developers.google.com/mobile-ads-sdk/docs/admob/android/interstitial
+
+![build_bigger_interAd_crop](https://user-images.githubusercontent.com/22602021/60378258-d157c580-99ed-11e9-9089-3a4b27696016.png)
 
 ### Add Loading Indicator
 
