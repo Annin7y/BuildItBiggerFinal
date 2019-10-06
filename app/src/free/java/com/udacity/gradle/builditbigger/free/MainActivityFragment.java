@@ -22,10 +22,12 @@ import com.udacity.gradle.builditbigger.R;
 
 import builditbigger.android.my.annin.jokeslibrary.JokesActivity;
 
-public class MainActivityFragment extends BaseMainActivityFragment {
+
+public class MainActivityFragment extends BaseMainActivityFragment
+{
     //Main Activity Fragment copied from main directory
-    public MainActivityFragment() {
-    }
+    public MainActivityFragment()
+    {}
 
     TextView helloStringFree;
 
@@ -38,8 +40,9 @@ public class MainActivityFragment extends BaseMainActivityFragment {
     private ProgressBar indicator;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+    {
+
         View root = inflater.inflate(R.layout.fragment_main, container, false);
 
         helloStringFree = (TextView) root.findViewById(R.id.hello_free_text_view);
